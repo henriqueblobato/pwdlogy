@@ -206,7 +206,7 @@ def start():
 		line = line.replace("\n","");
 		if(line.replace(" ","").replace("	","") == ''):
 			continue
-		if line[0] == '#':
+		if '#' in line:
 			continue
 		elif line == 'fast:break:slow' and fastMode:
 			break;
@@ -951,7 +951,7 @@ def custom(mystr):
 
 defaultFile = open('default.conf', 'r')
 for line in defaultFile:
-	if line[0] == '#':
+	if '#' in line:
 		continue
 	if line.split("=")[0].replace(" ","") == 'settings':
 		defaultSettingsFileName = line.split("=")[1].replace(" ","")
